@@ -17,8 +17,8 @@ def download_playlist(url):
 
 def download_single(url):
     r = requests.get(url)
-    mp3_url = r.json()['song'][0]['mp3Url']
-
+    song_name = r.json()['songs'][0]['name']
+    mp3_url = r.json()['songs'][0]['mp3Url']
 
 if args.playlist:
     playlist_url = playlist_format % args.id-number
